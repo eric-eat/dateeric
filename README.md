@@ -78,10 +78,10 @@ Then visit `http://localhost:8080`.
 5. Save.
 
 After deploy, your site is live at
-`https://eric-eat.github.io/ericdate/`.
+`https://eric-eat.github.io/dateeric/`.
 
 For a referral link:
-`https://eric-eat.github.io/ericdate/?ref=first%20second`
+`https://eric-eat.github.io/dateeric/?ref=first%20second`
 
 ## Notes on spam and privacy
 
