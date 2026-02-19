@@ -78,10 +78,10 @@ Then visit `http://localhost:8080`.
 5. Save.
 
 After deploy, your site is live at
-`https://eric-chng.github.io/dating-app/`.
+`https://eric-eat.github.io/ericdate/`.
 
 For a referral link:
-`https://eric-chng.github.io/dating-app/?ref=first%20second`
+`https://eric-eat.github.io/ericdate/?ref=first%20second`
 
 ## Notes on spam and privacy
 
