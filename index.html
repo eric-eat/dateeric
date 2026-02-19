@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Swipe on me. A joke dating app where every card is me."
+    />
+    <title>Swipe Right On Me</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div id="referralModal" class="referral-modal hidden" role="dialog" aria-modal="true" aria-labelledby="referralModalTitle">
+      <div class="referral-modal-card">
+        <h2 id="referralModalTitle">Referral Drop</h2>
+        <p id="referralModalMessage"></p>
+        <button id="closeReferralModalBtn" class="btn btn-secondary" type="button">Let me swipe</button>
+      </div>
+    </div>
+
+    <main class="app-shell">
+      <header class="app-header">
+        <h1>Swipe Right On Me</h1>
+        <p class="tagline">A dating app where every profile is me.</p>
+      </header>
+
+      <section class="deck-section">
+        <div id="deck" class="deck" aria-live="polite"></div>
+        <div id="emptyState" class="empty-state hidden">
+          <h2>Out of me.</h2>
+          <p>You swiped through every version of me. Impressive commitment.</p>
+          <button id="restartDeckBtn" class="btn btn-secondary" type="button">
+            Start Over
+          </button>
+        </div>
+      </section>
+
+      <section class="controls" aria-label="Swipe controls">
+        <button class="btn btn-nope" data-action="nope" type="button">Nope</button>
+        <button class="btn btn-super" data-action="super_like" type="button">
+          Super Like
+        </button>
+        <button class="btn btn-like" data-action="like" type="button">Like</button>
+      </section>
+
+      <section class="stats" aria-label="Local swipe stats">
+        <div class="stat-chip">
+          <span class="stat-label">Likes</span>
+          <strong id="statLikes">0</strong>
+        </div>
+        <div class="stat-chip">
+          <span class="stat-label">Nope</span>
+          <strong id="statNopes">0</strong>
+        </div>
+        <div class="stat-chip">
+          <span class="stat-label">Super Likes</span>
+          <strong id="statSupers">0</strong>
+        </div>
+        <div class="stat-chip">
+          <span class="stat-label">IG Submissions</span>
+          <strong id="statIgSubmissions">0</strong>
+        </div>
+      </section>
+
+      <section class="backend-status-wrap">
+        <p id="backendStatus" class="backend-status">
+          Backend status: local mode (configure Supabase to store data)
+        </p>
+      </section>
+
+      <section class="instagram-section">
+        <h2>Actually into me?</h2>
+        <p>Drop your Instagram and I'll reach out!</p>
+
+        <form id="instagramForm" class="instagram-form" novalidate>
+          <label for="instagramHandle">Instagram handle</label>
+          <input
+            id="instagramHandle"
+            name="instagramHandle"
+            type="text"
+            placeholder="@your_handle"
+            maxlength="31"
+            required
+            autocomplete="off"
+          />
+
+          <label for="message">Message for me (optional)</label>
+          <textarea
+            id="message"
+            name="message"
+            placeholder="Shoot your shot..."
+            maxlength="500"
+            rows="4"
+          ></textarea>
+          <p class="field-hint">Max 500 characters.</p>
+
+          <div class="consent-row">
+            <input id="consent" name="consent" type="checkbox" required />
+            <label for="consent">
+              I agree that my Instagram can be stored and used for contact.
+            </label>
+          </div>
+
+          <input
+            id="websiteField"
+            name="websiteField"
+            type="text"
+            tabindex="-1"
+            autocomplete="off"
+            class="honeypot"
+            aria-hidden="true"
+          />
+
+          <button id="submitInstagramBtn" type="submit" class="btn btn-submit">
+            Submit Instagram
+          </button>
+        </form>
+
+        <p id="formMessage" class="form-message" aria-live="polite"></p>
+      </section>
+    </main>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
